@@ -12,6 +12,7 @@ use Validator;
 class AuthController extends Controller
 {
     public function register(Request $request){
+        
         $validator = Validator::make($request->all(), [
             'firstName'=> 'required|string|max:255',
             'lastName'=> 'required|string|max:255',
