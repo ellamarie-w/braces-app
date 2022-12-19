@@ -14,7 +14,8 @@ class LibraryItemsController extends Controller
      */
     public function index()
     {
-        //
+        $libraryItem = LibraryItems::all();
+        return $libraryItem;
     }
 
     /**
