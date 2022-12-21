@@ -14,7 +14,8 @@ class CommunityPostController extends Controller
      */
     public function index()
     {
-        //
+        $post = CommunityPost::all();
+        return $post;
     }
 
     /**
@@ -35,7 +36,12 @@ class CommunityPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new CommunityPost();
+        $post->topic = $request->topic;
+        $post->bodyText = $request->bodyText;
+        $post->postAuthor = $request->postAuthor;
+
+        $post->save();
     }
 
     /**
@@ -69,7 +75,13 @@ class CommunityPostController extends Controller
      */
     public function update(Request $request, communityPost $communityPost)
     {
-        //
+        $post = CommunityPost::findOrFail($request->$id);
+        $post->topic = $request->topic;
+        $post->bodyText = $request->bodyText;
+        $post->postAuthor = $request->postAuthor;
+
+        $post->save();
+        return $post;
     }
 
     /**
@@ -80,6 +92,7 @@ class CommunityPostController extends Controller
      */
     public function destroy(communityPost $communityPost)
     {
-        //
+        $post = CommunityPost::destroy($id);
+        return $post;
     }
 }
