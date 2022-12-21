@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class communityPost extends Model
 {
     use HasFactory;
+    protected $fillable = ['topic','bodyText','postAuthor'];
 }

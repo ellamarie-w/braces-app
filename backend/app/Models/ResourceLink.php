@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ResourceLink extends Model
 {
     use HasFactory;
+    protected $fillable = ['linkTitle','linkDescription','Url'];
 }

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('post_comments', function (Blueprint $table) {
             $table->id();
+            $table->longtext('postCommentBody');
             $table->timestamps();
         });
     }
