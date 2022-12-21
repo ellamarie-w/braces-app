@@ -14,7 +14,8 @@ class BlogCommentController extends Controller
      */
     public function index()
     {
-        //
+        $comment = BlogComment::all();
+        return $comment;
     }
 
     /**
@@ -35,7 +36,10 @@ class BlogCommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment = new BlogComment();
+        $comment->blogCommentBody = $request->blogCommentBody;
+
+        $comment->save();
     }
 
     /**
@@ -69,7 +73,11 @@ class BlogCommentController extends Controller
      */
     public function update(Request $request, BlogComment $blogComment)
     {
-        //
+        $comment = BlogComment::findOrFail($request->$id);
+        $comment->blogCommentBody = $request->blogCommentBody;
+
+        $comment->save();
+        return $comment;
     }
 
     /**
@@ -80,6 +88,7 @@ class BlogCommentController extends Controller
      */
     public function destroy(BlogComment $blogComment)
     {
-        //
+        $comment = BlogComment::destroy($id);
+        return $comment;
     }
 }
