@@ -14,7 +14,8 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        //
+        $post = BlogPost::all();
+        return $post;
     }
 
     /**
@@ -35,7 +36,12 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new BlogPost();
+        $post->postTitle = $request->postTitle;
+        $post->bodyText = $request->bodyText;
+        $post->thumbnailImg = $request->thumbnailImg;
+
+        $post->save();
     }
 
     /**
@@ -69,7 +75,13 @@ class BlogPostController extends Controller
      */
     public function update(Request $request, blogPost $blogPost)
     {
-        //
+        $post = BlogPost::findOrFail($request->$id);
+        $post->postTitle = $request->postTitle;
+        $post->bodyText = $request->bodyText;
+        $post->thumbnailImg = $request->thumbnailImg;
+
+        $post->save();
+        return $post;
     }
 
     /**
@@ -80,6 +92,7 @@ class BlogPostController extends Controller
      */
     public function destroy(blogPost $blogPost)
     {
-        //
+        $post = BlogPost::destroy($id);
+        return $post;
     }
 }
