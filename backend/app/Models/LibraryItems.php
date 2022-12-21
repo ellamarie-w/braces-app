@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class LibraryItems extends Model
 {
     use HasFactory;
+    protected $fillable = ['docTitle','docImage','docAuthor','docDescription','docFile'];
 }
