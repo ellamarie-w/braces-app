@@ -49,17 +49,17 @@ Route::delete('/library/{id}',[LibraryItemsController::class,'destroy']);
 |------------
 */
 
-Route::get('/',[Controller::class,'index']);
-Route::post('/',[Controller::class,'store']);
-Route::put('//{id}',[Controller::class,'update']);
-Route::delete('//{id}',[Controller::class,'destroy']);
+Route::get('/blogpost',[BlogPostController::class,'index']);
+Route::post('/blogpost',[BlogPostController::class,'store']);
+Route::put('/blogpost/{id}',[BlogPostController::class,'update']);
+Route::delete('/blogpost/{id}',[BlogPostController::class,'destroy']);
 
 //COMMENTS
 
-Route::get('/',[Controller::class,'index']);
-Route::post('/',[Controller::class,'store']);
-Route::put('//{id}',[Controller::class,'update']);
-Route::delete('//{id}',[Controller::class,'destroy']);
+Route::get('/blogComment',[BlogCommentController::class,'index']);
+Route::post('/blogComment',[BlogCommentController::class,'store']);
+Route::put('/blogComment/{id}',[BlogCommentController::class,'update']);
+Route::delete('/blogComment/{id}',[BlogCommentController::class,'destroy']);
 
 /*
 |------------
@@ -67,17 +67,17 @@ Route::delete('//{id}',[Controller::class,'destroy']);
 |------------
 */
 
-Route::get('/',[Controller::class,'index']);
-Route::post('/',[Controller::class,'store']);
-Route::put('//{id}',[Controller::class,'update']);
-Route::delete('//{id}',[Controller::class,'destroy']);
+Route::get('/communityPost',[CommunityPostController::class,'index']);
+Route::post('/communityPost',[CommunityPostController::class,'store']);
+Route::put('/communityPost/{id}',[CommunityPostController::class,'update']);
+Route::delete('/communityPost/{id}',[CommunityPostController::class,'destroy']);
 
 //COMMENTS
 
-Route::get('/',[Controller::class,'index']);
-Route::post('/',[Controller::class,'store']);
-Route::put('//{id}',[Controller::class,'update']);
-Route::delete('//{id}',[Controller::class,'destroy']);
+Route::get('/communityComment',[PostCommentController::class,'index']);
+Route::post('/communityComment',[PostCommentController::class,'store']);
+Route::put('/communityComment/{id}',[PostCommentController::class,'update']);
+Route::delete('/communityComment/{id}',[PostCommentController::class,'destroy']);
 
 /*
 |------------
@@ -85,7 +85,7 @@ Route::delete('//{id}',[Controller::class,'destroy']);
 |------------
 */
 
-Route::get('/',[Controller::class,'index']);
-Route::post('/',[Controller::class,'store']);
-Route::put('//{id}',[Controller::class,'update']);
-Route::delete('//{id}',[Controller::class,'destroy']);
+Route::get('/resourcesLink',[ResourceLinkController::class,'index']);
+Route::post('/resourcesLink',[ResourceLinkController::class,'store']);
+Route::put('/resourcesLink/{id}',[ResourceLinkController::class,'update']);
+Route::delete('/resourcesLink/{id}',[ResourceLinkController::class,'destroy']);
