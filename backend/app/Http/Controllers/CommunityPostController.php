@@ -70,10 +70,10 @@ class CommunityPostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\communityPost  $communityPost
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, communityPost $communityPost)
+    public function update(Request $request, $id)
     {
         $post = CommunityPost::findOrFail($request->$id);
         $post->topic = $request->topic;
@@ -87,10 +87,10 @@ class CommunityPostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\communityPost  $communityPost
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(communityPost $communityPost)
+    public function destroy($id)
     {
         $post = CommunityPost::destroy($id);
         return $post;

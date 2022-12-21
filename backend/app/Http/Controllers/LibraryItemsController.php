@@ -49,10 +49,10 @@ class LibraryItemsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LibraryItems  $libraryItems
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(LibraryItems $libraryItems)
+    public function show($id)
     {
         //
     }
@@ -60,10 +60,10 @@ class LibraryItemsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\LibraryItems  $libraryItems
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(LibraryItems $libraryItems)
+    public function edit($id)
     {
         //
     }
@@ -72,10 +72,10 @@ class LibraryItemsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\LibraryItems  $libraryItems
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LibraryItems $libraryItems)
+    public function update(Request $request, $id)
     {
         $item = LibraryItems::findOrFail($request->$id);
         $item->docTitle = $request->docTitle;
@@ -91,10 +91,10 @@ class LibraryItemsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\LibraryItems  $libraryItems
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LibraryItems $libraryItems)
+    public function destroy($id)
     {
         $item = LibraryItems::destroy($id);
         return $item;

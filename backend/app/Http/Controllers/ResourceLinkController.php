@@ -70,10 +70,10 @@ class ResourceLinkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ResourceLink  $resourceLink
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ResourceLink $resourceLink)
+    public function update(Request $request, $id)
     {
         $link = ResourceLink::findOrFail($request->$id);
         $link->linkTitle = $request->linkTitle;
@@ -87,10 +87,10 @@ class ResourceLinkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ResourceLink  $resourceLink
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ResourceLink $resourceLink)
+    public function destroy($id)
     {
         $link = ResourceLink::destroy($id);
         return $link;

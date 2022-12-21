@@ -70,10 +70,10 @@ class BlogPostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BlogPost  $blogPost
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogPost $blogPost)
+    public function update(Request $request, $id)
     {
         $post = BlogPost::findOrFail($request->$id);
         $post->postTitle = $request->postTitle;
@@ -87,10 +87,10 @@ class BlogPostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BlogPost  $blogPost
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BlogPost $blogPost)
+    public function destroy($id)
     {
         $post = BlogPost::destroy($id);
         return $post;

@@ -68,10 +68,10 @@ class PostCommentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PostComment  $postComment
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PostComment $postComment)
+    public function update(Request $request, $id)
     {
         $comment = PostComment::findOrFail($request->$id);
         $comment->postCommentBody = $request->postCommentBody;
@@ -83,10 +83,10 @@ class PostCommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PostComment  $postComment
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PostComment $postComment)
+    public function destroy($id)
     {
         $comment = PostComment::destroy($id);
         return $comment;

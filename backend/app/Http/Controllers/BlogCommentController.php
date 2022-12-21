@@ -68,10 +68,10 @@ class BlogCommentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BlogComment  $blogComment
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogComment $blogComment)
+    public function update(Request $request, $id)
     {
         $comment = BlogComment::findOrFail($request->$id);
         $comment->blogCommentBody = $request->blogCommentBody;
@@ -83,10 +83,10 @@ class BlogCommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BlogComment  $blogComment
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BlogComment $blogComment)
+    public function destroy($id)
     {
         $comment = BlogComment::destroy($id);
         return $comment;
