@@ -14,7 +14,8 @@ class ResourceLinkController extends Controller
      */
     public function index()
     {
-        //
+        $link = ResourceLink::all();
+        return $link;
     }
 
     /**
@@ -35,7 +36,12 @@ class ResourceLinkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $link = new ResourceLink();
+        $link->linkTitle = $request->linkTitle;
+        $link->linkDescription = $request->linkDescription;
+        $link->Url = $request->Url;
+
+        $link->save();
     }
 
     /**
@@ -69,7 +75,13 @@ class ResourceLinkController extends Controller
      */
     public function update(Request $request, ResourceLink $resourceLink)
     {
-        //
+        $link = ResourceLink::findOrFail($request->$id);
+        $link->linkTitle = $request->linkTitle;
+        $link->linkDescription = $request->linkDescription;
+        $link->Url = $request->Url;
+
+        $link->save();
+        return $link;
     }
 
     /**
@@ -80,6 +92,7 @@ class ResourceLinkController extends Controller
      */
     public function destroy(ResourceLink $resourceLink)
     {
-        //
+        $link = ResourceLink::destroy($id);
+        return $link;
     }
 }
