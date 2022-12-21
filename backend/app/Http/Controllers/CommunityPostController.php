@@ -75,7 +75,7 @@ class CommunityPostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = CommunityPost::findOrFail($request->$id);
+        $post = CommunityPost::findOrFail($id);
         $post->topic = $request->topic;
         $post->bodyText = $request->bodyText;
         $post->postAuthor = $request->postAuthor;

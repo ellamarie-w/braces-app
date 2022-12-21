@@ -75,7 +75,7 @@ class ResourceLinkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $link = ResourceLink::findOrFail($request->$id);
+        $link = ResourceLink::findOrFail($id);
         $link->linkTitle = $request->linkTitle;
         $link->linkDescription = $request->linkDescription;
         $link->Url = $request->Url;

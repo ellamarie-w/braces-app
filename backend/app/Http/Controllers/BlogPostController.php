@@ -75,7 +75,7 @@ class BlogPostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = BlogPost::findOrFail($request->$id);
+        $post = BlogPost::findOrFail($id);
         $post->postTitle = $request->postTitle;
         $post->bodyText = $request->bodyText;
         $post->thumbnailImg = $request->thumbnailImg;

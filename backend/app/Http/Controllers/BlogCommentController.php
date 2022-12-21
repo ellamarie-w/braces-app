@@ -73,7 +73,7 @@ class BlogCommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $comment = BlogComment::findOrFail($request->$id);
+        $comment = BlogComment::findOrFail($id);
         $comment->blogCommentBody = $request->blogCommentBody;
 
         $comment->save();

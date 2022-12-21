@@ -73,7 +73,7 @@ class PostCommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $comment = PostComment::findOrFail($request->$id);
+        $comment = PostComment::findOrFail($id);
         $comment->postCommentBody = $request->postCommentBody;
 
         $comment->save();
