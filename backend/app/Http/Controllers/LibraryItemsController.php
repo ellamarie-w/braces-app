@@ -77,7 +77,7 @@ class LibraryItemsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item = LibraryItems::findOrFail($request->$id);
+        $item = LibraryItems::findOrFail($id);
         $item->docTitle = $request->docTitle;
         $item->docImage = $request->docImage;
         $item->docAuthor = $request->docAuthor;
