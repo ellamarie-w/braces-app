@@ -36,7 +36,14 @@ class LibraryItemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new LibraryItems();
+        $item->docTitle = $request->docTitle;
+        $item->docImage = $request->docImage;
+        $item->docAuthor = $request->docAuthor;
+        $item->docDescription = $request->docDescription;
+        $item->docFile = $request->docFile;
+
+        $item->save();
     }
 
     /**
@@ -70,7 +77,15 @@ class LibraryItemsController extends Controller
      */
     public function update(Request $request, LibraryItems $libraryItems)
     {
-        //
+        $item = LibraryItems::findOrFail($request->$id);
+        $item->docTitle = $request->docTitle;
+        $item->docImage = $request->docImage;
+        $item->docAuthor = $request->docAuthor;
+        $item->docDescription = $request->docDescription;
+        $item->docFile = $request->docFile;
+
+        $item->save();
+        return $item;
     }
 
     /**
@@ -81,6 +96,7 @@ class LibraryItemsController extends Controller
      */
     public function destroy(LibraryItems $libraryItems)
     {
-        //
+        $item = LibraryItems::destroy($id);
+        return $item;
     }
 }
