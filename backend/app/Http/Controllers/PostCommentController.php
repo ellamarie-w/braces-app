@@ -14,7 +14,8 @@ class PostCommentController extends Controller
      */
     public function index()
     {
-        //
+        $comment = PostComment::all();
+        return $comment;
     }
 
     /**
@@ -35,7 +36,10 @@ class PostCommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment = new PostComment();
+        $comment->postCommentBody = $request->postCommentBody;
+
+        $comment->save();
     }
 
     /**
@@ -69,7 +73,11 @@ class PostCommentController extends Controller
      */
     public function update(Request $request, PostComment $postComment)
     {
-        //
+        $comment = PostComment::findOrFail($request->$id);
+        $comment->postCommentBody = $request->postCommentBody;
+
+        $comment->save();
+        return $comment;
     }
 
     /**
@@ -80,6 +88,7 @@ class PostCommentController extends Controller
      */
     public function destroy(PostComment $postComment)
     {
-        //
+        $comment = PostComment::destroy($id);
+        return $comment;
     }
 }
