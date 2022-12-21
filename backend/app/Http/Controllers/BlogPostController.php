@@ -50,7 +50,7 @@ class BlogPostController extends Controller
      * @param  \App\Models\blogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function show(blogPost $blogPost)
+    public function show(BlogPost $blogPost)
     {
         //
     }
@@ -61,7 +61,7 @@ class BlogPostController extends Controller
      * @param  \App\Models\blogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function edit(blogPost $blogPost)
+    public function edit(BlogPost $blogPost)
     {
         //
     }
@@ -73,7 +73,7 @@ class BlogPostController extends Controller
      * @param  \App\Models\blogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, blogPost $blogPost)
+    public function update(Request $request, BlogPost $blogPost)
     {
         $post = BlogPost::findOrFail($request->$id);
         $post->postTitle = $request->postTitle;
@@ -90,7 +90,7 @@ class BlogPostController extends Controller
      * @param  \App\Models\blogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function destroy(blogPost $blogPost)
+    public function destroy(BlogPost $blogPost)
     {
         $post = BlogPost::destroy($id);
         return $post;
