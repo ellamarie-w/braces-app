@@ -31,6 +31,8 @@ Route::middleware(['auth:sanctum'])->group(function(){
 
 });
 
+Route::get('/users',[UserController::class,'index']);
+Route::put('/users/{id}',[UserController::class,'update']);
 
 /*
 |------------

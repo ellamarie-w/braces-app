@@ -4,8 +4,15 @@ import {Link} from react-router-dom
 
 const ShowUserProfile = () => {
 
-    const getAllData = () => {
-        //
+    const endpoint = 'http://localhost:8000/backend'
+
+    const [user, setUser] = useState([])
+    useEffect(() => {
+        getAllData()
+    })
+
+    const getAllData = async () => {
+        await axios.get(`${endpoint})/users`)
     }
 
     const deleteData = () => {
