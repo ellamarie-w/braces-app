@@ -48,7 +48,7 @@ class AuthController extends Controller
 
         }
 
-        $user = User::where('email', $request['email'])->firstOrFail();
+        $user = User::where('email', '=', $request['email'])->firstOrFail();
 
         $token = $user->createToken('auth_token')->plainTextToken;
 
