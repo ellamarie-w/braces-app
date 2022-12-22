@@ -62,6 +62,14 @@ class AuthController extends Controller
             ]);
     }
 
+    public function userProfile() {
+        return response ()->json([
+            'status' => 0,
+            'message' =>"About user profile",
+            'data' => auth()->user()
+        ], 404);
+    }
+
     public function logout(){
 
         auth()->user()->tokens()->delete();
@@ -69,13 +77,5 @@ class AuthController extends Controller
         return [
             'message' => 'You have successfully logged out!'
         ];
-    }
-
-    public function userProfile() {
-        return response ()->json([
-            'status' => 0,
-            'message' =>"About user profile",
-            'data' => auth()->user()
-        ], 404);
     }
 }
