@@ -70,4 +70,12 @@ class AuthController extends Controller
             'message' => 'You have successfully logged out!'
         ];
     }
+
+    public function userProfile() {
+        return response ()->json([
+            'status' => 0,
+            'message' =>"About user profile",
+            'data' => auth()->user()
+        ], 404);
+    }
 }
