@@ -12,7 +12,7 @@ function Login() {
                     <div className='row'>
                         <div className="col">
                             <h3>Welcome to the best free library for developers</h3>
-                            <div className="col-" id='email'>
+                            <div className="col" id='email'>
                             <label for="staticEmail" className="col-sm-2 col-form-label">Email</label>
                             <div className='col-md' >
                                 <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter your email address"/>
