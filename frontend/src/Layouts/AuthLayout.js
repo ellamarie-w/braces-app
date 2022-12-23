@@ -16,19 +16,19 @@ function AuthLayout() {
                             <a className="nav-link link-light" href="/library">Library</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link link-light" href="/">News</a>
+                            <a className="nav-link link-light" href="/news">News</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link link-light" href="/">Community</a>
+                            <a className="nav-link link-light" href="/community">Community</a>
                         </li>
                     </ul>
 
                     <ul className="nav justify-content-end">
                         <li className="nav-item">
-                            <a className="nav-link link-light" href="/">Profile</a>
+                            <a className="nav-link link-light" href="/profile">Profile</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link link-light" href="/">Logout</a>
+                            <a className="nav-link link-light" href="/logout">Logout</a>
                         </li>
                     </ul>
                 </div>
