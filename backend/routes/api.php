@@ -9,6 +9,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\CommunityPostController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\ResourceLinkController;
+use App\Http\Controllers\FilesController;
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -88,3 +89,12 @@ Route::get('/resourcesLink',[ResourceLinkController::class,'index']);
 Route::post('/resourcesLink',[ResourceLinkController::class,'store']);
 Route::put('/resourcesLink/{id}',[ResourceLinkController::class,'update']);
 Route::delete('/resourcesLink/{id}',[ResourceLinkController::class,'destroy']);
+
+/*
+|------------
+| Files
+|------------
+*/
+
+Route::get('/download/{id}',[FilesController::class,'download']);
+Route::post('/upload',[FilesController::class,'upload']);
