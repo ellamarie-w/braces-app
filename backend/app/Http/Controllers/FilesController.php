@@ -13,7 +13,8 @@ class FilesController extends Controller
         return ['result'->$result];
     }
 
-    public function index() {
-        return view['file.index'];
+    public function download(Request $request) {
+        $path = storage_path(app\files);
+        return response()->download($path);
     }
 }
