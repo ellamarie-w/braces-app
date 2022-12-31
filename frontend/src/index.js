@@ -6,19 +6,25 @@ import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/dropdown';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ShowLibrary from './Components/ShowLibrary';
-import AuthLayout from './Layouts/AuthLayout';
-import Login from './Pages/Login';
+import NoAuthLayout from './Layouts/NoAuthLayout';
+//import Login from './Pages/Login';
+import Files from './Components/Files'
 
 const router = createBrowserRouter([
 
-  {
+  /*{
     path: '/',
     element: < Login />
+  }, */
+
+  {
+    path: '/',
+    element: < Files />
   },
 
   {
     path: '/home',
-    element: < AuthLayout />,
+    element: < NoAuthLayout />,
     children: [
       {
         path: '/home/library',
